@@ -18,17 +18,24 @@
 </head>
 
 <body>
-    <!-- External Stylesheet (DO NOT REMOVE) -->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/styles/custompages.css">
-
-    <!-- Internal Styles (Page Styles) -->
-    <style>
-
-        .sp-hero-out .container {
+<!-- Internal Styles (Page Styles) -->
+<style>
+    .sp-hero-out .container {
             left: 0%;
             right: 38%;
             top: 75%;
+            z-index: 2;
+        }
+
+        .sp-hero-out .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            z-index: 1;
+
         }
 
         .sp-hero-content {
@@ -141,32 +148,30 @@
                 width: 1600px
             }
         }
-    </style>
-    <div id="sp-main" class="container">
-        <div class="row">
-            <div id="left" class="col-sm-8" style="width: 100%;">
-                <div id="sp-content">
-                    <!--@@DG_PRINT_PAGE_BEGIN@@
+</style>
+<div id="sp-main" class="container">
+    <div class="row">
+        <div id="left" class="col-sm-8" style="width: 100%;">
+            <div id="sp-content">
+                <!--@@DG_PRINT_PAGE_BEGIN@@
 						IMPORTANT! DO NOT MOVE OR MODIFY -->
 
-                    <form name="aspnetForm" method="post" action="./EventDetails.aspx?id=1604820&amp;group="
-                        id="aspnetForm">
-                        <div>
-                            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-                            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-                            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
-                                value="/wEPDwUKMTgyNDMzMDA5Nw8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgJmD2QWAgIBD2QWAmYPZBYOAgEPFgIeB1Zpc2libGVoZAICDxYCHwFoZAIED2QWAmYPFgIfAWhkAgUPFgIfAWhkAgcPFgIfAWhkAggPFgIfAWcWBAIBDw8WAh8BZ2RkAgIPDxYCHg1PbkNsaWVudENsaWNrBUNsb2NhdGlvbi5ocmVmPScvZXZlbnRzL0pvaW5XYWl0bGlzdC5hc3B4P2lkPTE2MDQ4MjAnOyByZXR1cm4gZmFsc2U7ZGQCDQ9kFgICAw9kFgICAQ9kFgQCAQ9kFgICAQ8WAh4EVGV4dAULUGFnZSAwIG9mIDBkAgMPZBYSAgEPZBYCAgEPFgIfAwVXPGEgaHJlZj0vZXZlbnRzL0V2ZW50RGV0YWlscy5hc3B4P2lkPTE2MDQ4MjAmZ3JvdXA9JnBhZ2U9MSB0aXRsZT0iRmlyc3QgUGFnZSI+fCZsdDs8L2E+ZAIDDw8WAh8BaGRkAgUPZBYCAgEPFgIfAwVaPGEgaHJlZj0vZXZlbnRzL0V2ZW50RGV0YWlscy5hc3B4P2lkPTE2MDQ4MjAmZ3JvdXA9JnBhZ2U9LTEgdGl0bGU9IlByZXZpb3VzIFBhZ2UiPiZsdDs8L2E+ZAIHDw8WAh8BaGRkAgkPZBYCAgEPFgIfAwUvPHNwYW4gaWQ9InBhZ2luZ0N1cnJlbnRQYWdlIj5QYWdlIDEgb2YgMTwvc3Bhbj5kAgsPDxYCHwFoZGQCDQ8PFgIfAWhkZAIPDw8WAh8BaGRkAhEPDxYCHwFoZGRkzzygyj/VCZRaINO9U+bSg57VpelC0eJceZZ7vdx7/Lw=">
-                        </div>
+                <form name="aspnetForm" method="post" action="./EventDetails.aspx?id=1604820&amp;group=" id="aspnetForm">
+                    <div>
+                        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" />
+                        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" />
+                        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTgyNDMzMDA5Nw8WAh4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgJmD2QWAgIBD2QWAmYPZBYOAgEPFgIeB1Zpc2libGVoZAICDxYCHwFoZAIED2QWAmYPFgIfAWhkAgUPFgIfAWhkAgcPFgIfAWhkAggPFgIfAWcWBAIBDw8WAh8BZ2RkAgIPDxYCHg1PbkNsaWVudENsaWNrBUNsb2NhdGlvbi5ocmVmPScvZXZlbnRzL0pvaW5XYWl0bGlzdC5hc3B4P2lkPTE2MDQ4MjAnOyByZXR1cm4gZmFsc2U7ZGQCDQ9kFgICAw9kFgICAQ9kFgQCAQ9kFgICAQ8WAh4EVGV4dAULUGFnZSAwIG9mIDBkAgMPZBYSAgEPZBYCAgEPFgIfAwVXPGEgaHJlZj0vZXZlbnRzL0V2ZW50RGV0YWlscy5hc3B4P2lkPTE2MDQ4MjAmZ3JvdXA9JnBhZ2U9MSB0aXRsZT0iRmlyc3QgUGFnZSI+fCZsdDs8L2E+ZAIDDw8WAh8BaGRkAgUPZBYCAgEPFgIfAwVaPGEgaHJlZj0vZXZlbnRzL0V2ZW50RGV0YWlscy5hc3B4P2lkPTE2MDQ4MjAmZ3JvdXA9JnBhZ2U9LTEgdGl0bGU9IlByZXZpb3VzIFBhZ2UiPiZsdDs8L2E+ZAIHDw8WAh8BaGRkAgkPZBYCAgEPFgIfAwUvPHNwYW4gaWQ9InBhZ2luZ0N1cnJlbnRQYWdlIj5QYWdlIDEgb2YgMTwvc3Bhbj5kAgsPDxYCHwFoZGQCDQ8PFgIfAWhkZAIPDw8WAh8BaGRkAhEPDxYCHwFoZGRkzzygyj/VCZRaINO9U+bSg57VpelC0eJceZZ7vdx7/Lw="
+                        />
+                    </div>
 
 
-                        <div>
+                    <div>
 
-                            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A9758C5D">
-                            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-                                value="/wEdAAJjvL0lyFm8nj4pOFUEb8xodY/1HXMdswGWum7Jj9WHBdUcXwwzILj0oUvYnnkPCi31OyyNw2Kes7T4DLHGTv/X">
-                        </div>
-                        <style>
-                            .ViewTable1 tr td.caption {
+                        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A9758C5D" />
+                        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAJjvL0lyFm8nj4pOFUEb8xodY/1HXMdswGWum7Jj9WHBdUcXwwzILj0oUvYnnkPCi31OyyNw2Kes7T4DLHGTv/X" />
+                    </div>
+                    <style>
+                        .ViewTable1 tr td.caption {
                                 text-align: left;
                                 vertical-align: top;
                                 padding-right: 5px;
@@ -291,46 +296,46 @@
                             .prodNameGrid a:hover {
                                 color: White;
                             }
-                        </style>
-                        <table id="SpSubHead" border="0" cellpadding="0" cellspacing="0" style="width:100%">
-                            <tbody>
-                                <tr>
-                                    <td id="SpTitleBar">
-                                        Stepping into Management September 2022
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="tdBreadCrumb"></td>
-                                </tr>
-                                <tr>
-                                    <td id="SpNavBar">
+                    </style>
+                    <table id="SpSubHead" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td id="SpTitleBar">
+                                    Stepping into Management September 2022
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdBreadCrumb"></td>
+                            </tr>
+                            <tr>
+                                <td id="SpNavBar">
 
-                                        <a title="Register" href="#" onclick="return RegistrationValidationBox();"><img
-                                                src="https://cloresocialleadership.org.uk/global_graphics/icons/notepad.gif"
-                                                align="left" border="0">Register</a>
+                                    <a title="Register" href="https://zoom.us/webinar/register/2916677666370/WN_Tv1sDiueQtmmKHIb8FOkFA" onclick="return RegistrationValidationBox();"><img alt="" src="https://cloresocialleadership.org.uk/global_graphics/icons/notepad.gif" style="float: left; border-width: 0px; border-style: solid;" />Register</a>
 
 
 
-                                        <a href="/members/send.asp?event=1604820"><img align="left"
-                                                src="https://cloresocialleadership.org.uk/global_graphics/icons/envelope.gif"
-                                                alt="Tell a Friend About This Event" border="0">Tell a Friend</a>
+                                    <a href="/members/send.asp?event=1604820"><img src="https://cloresocialleadership.org.uk/global_graphics/icons/envelope.gif" alt="Tell a Friend About This Event" style="float: left; border-width: 0px; border-style: solid;" />Tell a Friend</a>
 
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <table id="SpContent" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
-                            <tbody>
-                                <tr>
-                                    <td colspan="3">
-                                            <!-- External Stylesheet (DO NOT REMOVE) -->
-                                            <link rel="stylesheet" type="text/css"
-                                                href="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/styles/custompages.css">
+                    <table id="SpContent" border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <!-- External Stylesheet (DO NOT REMOVE) -->
+                                    <link rel="stylesheet" type="text/css" href="https://cdn.ymaws.com/www.marketaccess.org/resource/resmgr/custompages.css" />
 
-                                            <!-- Internal Styles (Page Styles) -->
-                                            <style>
-                                                .bg-gradient {
+                                    <!-- Internal Styles (Page Styles) -->
+                                    <style>
+                                        @media (max-width: 767px){
+                                            .sp-hero-out {
+                                                min-height: 300px;
+                                            }
+                                        }
+                                        .bg-gradient {
                                                     background: #ffcd00;
                                                 }
 
@@ -353,920 +358,38 @@
                                                 ul.nav.nav-tabs li {
                                                     border-right: 0;
                                                 }
-                                            </style>
+                                    </style>
 
 
-                                            <!-- Top Hero Starts -->
-                                        <div class="sp-hero-out" id="fellowship-hero">
-                                            <img src="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/resource/resmgr/images/programme_page_images/discover_programme_banner.png"
-                                                alt="/">
-                                            <div class="container">
-                                                <div class="sp-hero-content">
-                                                    <h1>Discover Programme</h1>
-                                                    <p>A 4-week online introduction to social leadership designed to
-                                                        help you gain insight into who you are as a leader and how to
-                                                        develop.</p>
-                                                    <p><span style="font-size: 36px;"><b>£50</b></span></p>
-                                                    <a href="https://cloresocialleadership.org.uk/events/event_list.asp?show=&amp;group=&amp;start=3%2F12%2F2021&amp;end=&amp;view=&amp;cid=21571"
-                                                        class="formbutton border" target="_self">View dates and secure
-                                                        your place</a>
-                                                </div>
+                                    <!-- Top Hero Starts -->
+                                    <div class="sp-hero-out" id="fellowship-hero">
+                                        <img src="https://cdn.ymaws.com/imas.site-ym.com/resource/resmgr/hero_images/hero_image_web_-_02c.jpg" alt="/" />
+                                        <div class="container">
+                                            <div class="sp-hero-content">
+                                                <h1>Live, Open Access Webinar</h1>
+                                                <p>Accelerating Patient Access to Innovative Interventions: Europe’s New Approach to Assessment for Reimbursement & Pricing Decisions Compared to the United States
+                                                </p>
+                                                <p><span style="font-size: 36px;"><b>Monday, November 21, 2022</b></span></p>
+                                                <a href="https://zoom.us/webinar/register/2916677666370/WN_Tv1sDiueQtmmKHIb8FOkFA" class="formbutton border" target="_self">Register now to attend for free</a>
                                             </div>
                                         </div>
+                                        <div class="bg-overlay">&nbsp;</div>
+                                    </div>
 
-                                        <!-- Navigation Bar Starts -->
-                                        <div class="sp-nav-out" id="fellowship-nav">
-                                            <div class="container">
-                                                <ul>
-                                                    <li><a href="#eligibility-criteria">Eligibility criteria</a></li>
-                                                    <li><a href="#testimonials">Testimonials</a></li>
-                                                    <li><a href="#outcomes">Programme outcomes</a></li>
-                                                    <li><a href="#learning">What you'll learn</a></li>
-                                                    <li><a href="#programme-outline">Programme outline</a></li>
-                                                    <li><a href="#facilitator">Course facilitator</a></li>
-                                                    <li><a href="#how-youll-learn">How you'll learn</a></li>
-                                                    <li><a href="#FAQs">FAQs</a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div style="display:inline-block;vertical-align:top; padding:20px;">
-                                                
-                                                &nbsp;
-                                                
-                                            </div>
-                                            <div style="display:inline-block;vertical-align:top; padding:20px;">
-                                                <p>Want to understand why managing well matters? This course covers the foundations of people management.</p>
-                                                <table border="0" cellspacing="0" cellpadding="0" class="ViewTable1">
-                                                    <tbody><tr>
-                                                        <td>
-                                                            &nbsp;<a href="#" title="Export to Your Calendar" id="AddToCalendarHoverLink_1604820_" onclick="AddToCalendarHoverLink_OnMouseOver(1604820, ''); return false;"><i class="far fa-calendar" style="font-size: 28px;"></i></a>
-                                                        </td>
-                                                        <td>
-                                                            <b>19/09/2022 to 14/10/2022</b>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <tr>
-                                                        <td class="caption">
-                                                            <b>When:</b>
-                                                        </td>
-                                                        <td style="text-align:left;vertical-align:top">
-                                                            19 September - 14 October 2022<br>2-4 hours per week<br>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    <tr>
-                                                        <td class="caption">
-                                                            <b>Where:</b>
-                                                        </td>
-                                                        <td>
-                                                            Online<br>United Kingdom<br>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    
-                                                    <tr>
-                                                        <td class="caption">
-                                                            <b>Contact:</b>
-                                                        </td>
-                                                        <td>
-                                                            Liam Russell<br>
-                                                            <script language="JavaScript">
-                                                                <!--
-                                        var strEmail = CharShiftDecrypt('otlu@iruxkyuiogrrkgjkxynov.uxm.Aq', 6, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
-                                                                document.write('<a href="mailto:' + strEmail + '">' + strEmail + '</a><br />');
-                                                                //-->
-                                                            </script><a href="mailto:info@cloresocialleadership.org.uk">info@cloresocialleadership.org.uk</a><br>
-                                                            020 7082 5370 ext 275<br>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                </tbody></table>
-                                            </div>
-                                            <div style="display:inline-block;vertical-align:top; padding:20px;">
-                                                <div>
-                                                    <br>
-                                                    
-                                
-                                                    
-                                                        <div style="width:100%;text-align:center;">
-                                                        <input type="button" name="ctl00$PageContent$btnRegister" value="Register" onclick="RegistrationValidationBox(); return false;__doPostBack('ctl00$PageContent$btnRegister','')" id="ctl00_PageContent_btnRegister" class="formbutton">
-                                                        </div>
-                                                        <br>
-                                                        <i style="font-size:small">Online registration is available until: 20/09/2022</i>
-                                                        <br>
-                                                        <ul class="ml"><li><b><a href="/events/Sessions.aspx?id=1604820">View Sessions »</a></b></li></ul>
-                                                    
-                                                    
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Details Info Starts -->
-                                        <div class="sp-content-out" id="fellowship-details">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Left Column (Header & Description) -->
-                                                    <div class="col-md-6 details-desc">
-                                                        <div class="section-header">
-                                                            <h2>Programme information</h2>
-                                                        </div>
-                                                        <p>Discover the <b>key leadership skills</b> required for social
-                                                            leadership and map your future leadership journey with our
-                                                            four week online introductory course.<br><br>The<b> Discover
-                                                                Programme</b> is a great first step or refresh for
-                                                            anyone working for social change who is looking to develop
-                                                            themselves as leaders in order to transform their
-                                                            organisations, communities and the world around them.</p>
-                                                    </div>
-                                                    <!-- Right Column (Details) -->
-                                                    <div class="col-md-5 col-md-offset-1 details-info">
-                                                        <div class="row">
-                                                            <!-- Detail Column 1 -->
-                                                            <div class="col-sm-6 details-col">
-                                                                <h6>Course Detail</h6>
-                                                                <ul>
-                                                                    <li><i class="far fa-clock"></i>2-4 hours/week</li>
-                                                                    <li><i class="fas fa-signal"></i>All levels of
-                                                                        experience</li>
-                                                                    <li><i class="fas fa-coins"></i> £50</li>
-                                                                    <li><i class="fas fa-graduation-cap"></i>Certificate
-                                                                        of completion</li>
-                                                                </ul>
-                                                            </div>
-                                                            <!-- Detail Column 2 -->
-                                                            <div class="col-sm-6 details-col">
-                                                                <h6>Course Features</h6>
-                                                                <ul>
-                                                                    <li><i class="fas fa-check"></i>4-week course</li>
-                                                                    <li><i class="fas fa-check"></i>Exclusively online
-                                                                    </li>
-                                                                    <li><i class="fas fa-check"></i>Self-paced learning
-                                                                    </li>
-                                                                    <li><i class="fas fa-check"></i>Peer networks</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Buttons -->
-                                        <div class="section-btns text-center"><a
-                                                href="https://cloresocialleadership.org.uk/events/event_list.asp?show=&amp;group=&amp;start=3%2F12%2F2021&amp;end=&amp;view=&amp;cid=21571"
-                                                target="_self" class="formbutton">View dates and secure your
-                                                place</a>&nbsp;&nbsp;</div>
-                                        <br>
-                                        <br>
-
-                                        <!-- Icon Columns Starts -->
-                                        <div class="sp-content-out bg-grey" id="eligibility-criteria">
-                                            <div class="lg-container">
-                                                <!-- Header -->
-                                                <div class="section-header">
-                                                    <h2>Eligibility criteria</h2>
-                                                </div>
-                                                <!-- Icons Row 1 -->
-                                                <div class="row">
-                                                    <!-- Column 1 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-check"></i>
-                                                            <h5>Leaders at all level</h5>
-                                                            <p>No matter if you’re a new manager or seasoned CEO, the
-                                                                programme will help you to better understand yourself,
-                                                                your organisation and your development needs.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 2 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-check"></i>
-                                                            <h5 style="text-align: center; background-color: #f7f7f7;">
-                                                                Working for social purpose</h5>
-                                                            <p><span
-                                                                    style="text-align: center; background-color: #f7f7f7;">This
-                                                                    refers to organisations or freelance work with a
-                                                                    social purpose, including charities, social
-                                                                    enterprises, CICs, CSR departments, etc.</span></p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 3 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-check"></i>
-                                                            <h5>Passionate about social change</h5>
-                                                            <p>Your interest in using your leadership skills and
-                                                                knowledge to help make the world a better place is
-                                                                key.&nbsp;</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 4 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-check"></i>
-                                                            <h5>Keen to develop</h5>
-                                                            <p>Your determination to develop yourself so you can lead
-                                                                social change effectively is all you need to take part
-                                                                in the programme.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Testimonials Starts -->
-                                        <div class="sp-content-out bg-teal text-center text-white" id="testimonials">
-                                            <div class="container">
-                                                <!-- Header -->
-                                                <div class="section-header">
-                                                    <h2>What Our Previous Participants Say</h2>
-                                                </div>
-                                                <!-- Testimonial Carousel -->
-                                                <div id="spTestimonialSlider" class="carousel slide"
-                                                    data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active">
-                                                            <p>"Absolutely brilliant, comprehensive and challenging
-                                                                course materials. Really appreciated the different
-                                                                methods of learning explored. Have actually learnt quite
-                                                                a lot!'</p>
-                                                            <h6>Kea Horvers<br>SOAS</h6>
-                                                        </div>
-                                                        <div class="item">
-                                                            <p>"I found the course incredibly thought-provoking and it
-                                                                really helped me to consider my management style, the
-                                                                context within which I operate and my role in achieving
-                                                                social change."</p>
-                                                            <h6>Participant<br>Discover Programme</h6>
-                                                        </div>
-                                                        <div class="item">
-                                                            <p>"The last three weeks of participating on the Discover
-                                                                Programme has reignited a passion for learning and
-                                                                wanting to do better, both in work and in my personal
-                                                                life."</p>
-                                                            <h6>Participant</h6>
-                                                            <h6>Discover Programme</h6>
-                                                        </div>
-                                                    </div>
-                                                    <a data-slide="prev" href="#spTestimonialSlider"
-                                                        class="left carousel-control"><i
-                                                            class="fa fa-chevron-left"></i></a>
-                                                    <a data-slide="next" href="#spTestimonialSlider"
-                                                        class="right carousel-control"><i
-                                                            class="fa fa-chevron-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Resource Accordions Starts -->
-                                        <div class="sp-content-out" id="outcomes">
-                                            <div class="container">
-                                                <!-- Header & Intro -->
-                                                <div class="resourceAccordions-intro">
-                                                    <div class="section-header">
-                                                        <h2>Outcomes</h2>
-                                                    </div>
-                                                    <p>Good leadership is a prerequisite for true, tangible social
-                                                        change. 21st century social challenges require leaders who can
-                                                        meet the challenges of a changing world.&nbsp;The Discover
-                                                        Programme helps you gain clear insight into who you are as
-                                                        a leader, where your strengths lie and how you might develop
-                                                        going forwards.&nbsp;You’ll get the opportunity to reflect on
-                                                        your own experiences and skills and contextualise them using a
-                                                        variety of accessible tools and techniques.&nbsp;</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Facilitator Starts -->
-                                        <div class="sp-content-out" id="facilitator">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Left Column -->
-                                                    <div class="col-md-8 info-left">
-                                                        <div class="section-header">
-                                                            <h2>Course facilitator</h2>
-                                                        </div>
-                                                        <h4 style="box-sizing: border-box; background-color: #ffffff;">
-                                                            <span style="font-size: 24px;">Mikayla Sinead</span>
-                                                        </h4>
-                                                        <p style="box-sizing: border-box; background-color: #ffffff;">
-                                                            Mikayla joins with a passion for leading with an inclusive
-                                                            intersectional mindset whilst centring joy. Mikayla’s career
-                                                            has focussed on developing more inclusive workplaces &amp;
-                                                            future leaders. Mikayla now combines her love for gaming
-                                                            with
-                                                            professional experience through her company Bridge Network
-                                                            Group which focuses on boosting representation in
-                                                            organisations. Additionally, as a passionate gamer and
-                                                            content creator on the streaming platform Twitch, Mikayla is
-                                                            on a mission
-                                                            to build a community of Black Women and future changemakers
-                                                            in the video game industry.</p>
-                                                        <p>Mikayla has a wealth of experience in supporting young and
-                                                            diverse talent to reach positions of influence and
-                                                            leadership. Mikayla is in the 2019 cohort of Birmingham
-                                                            Live’s 30 under 30 in recognition of her work with young
-                                                            people in the
-                                                            city. She also has experience with MAIA Group, TAG Network
-                                                            West Midlands, Amplify DEI, The British Council, UpRising
-                                                            Leadership West Midlands Combined Authority, Ultra
-                                                            Education, University of Birmingham, Enrol Yourself: The
-                                                            Learning
-                                                            Marathon, West Midlands Women's Voice, and iDNetwork.
-                                                            Mikayla is a confident public speaker and in 2018 spoke at
-                                                            the Women of the World Festival in Brazil.</p>
-                                                    </div>
-                                                    <!-- Right Column --><br><br><br><br><br><br>
-                                                    <div class="col-md-3 col-md-offset-1 info-right">
-                                                        <img src="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/resource/resmgr/images/programme_page_images/dei_transformation/makayla_new.jpg"
-                                                            alt="Mikayla Sinead" class="img-responsive center-block"><a
-                                                            href="https://cloresocialleadership.org.uk/events/event_list.asp?show=&amp;group=&amp;start=9%2F28%2F2021&amp;end=&amp;view=&amp;cid=22691"
-                                                            class="formbutton border-btn" target="_blank">View dates</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- CTA Bar 1 Starts -->
-                                        <div class="sp-content-out bg-gradient text-white" id="fellowship-cta1">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Column 1 -->
-                                                    <div class="col-sm-8 cr-left">
-                                                        <div class="section-header">
-                                                            <h2>Increase your leadership potential</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 2 -->
-                                                    <div class="col-sm-4 cr-right"><a
-                                                            href="https://cloresocialleadership.org.uk/events/event_list.asp?show=&amp;group=&amp;start=3%2F12%2F2021&amp;end=&amp;view=&amp;cid=21571"
-                                                            class="line-btn line-yellow" target="_blank">View dates and
-                                                            secure your place</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Why Us Starts -->
-                                        <div class="sp-content-out" id="learning">
-                                            <div class="lg-container">
-                                                <!-- Header -->
-                                                <div class="section-header">
-                                                    <h2>What you'll learn</h2>
-                                                </div>
-                                                <div style="text-align: center;">The programme learning will be guided
-                                                    by Clore Social Leadership’s Social Capabilites Framework and
-                                                    Leadership Development Model (both below). Using our <b>Social
-                                                        Capabilities Framework</b> you will be guided to develop
-                                                    inspirational, empowering,
-                                                    courageous, focused, passionate and generous leadership capabilities
-                                                    - qualities essential to any effective leader.</div>
-                                                <div style="text-align: center;">&nbsp;</div>
-                                                <div style="text-align: center;">You will learn how and what these
-                                                    skills and behaviours look like in action, where your strengths and
-                                                    areas of improvement lie, and how you can develop and encourage them
-                                                    in yourselves and others.</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Leadership Development Model (Animated Image/Tabs) Starts -->
-                                        <div class="sp-content-out">
-                                            <div class="lg-container">
-                                                <div class="leadership-modal">
-                                                    <div class="row">
-                                                        <!-- Left Column (Tab Buttons) -->
-                                                        <div class="col-sm-4 tab-btns info-img">
-                                                            <ul class="nav nav-tabs">
-                                                                <li class="active"><a href="#leadership-modal-tab1"
-                                                                        class="disable-scroll" data-toggle="tab">Know
-                                                                        Yourself, Be Yourself, Look After Yourself</a>
-                                                                </li>
-                                                                <li><a href="#leadership-modal-tab2"
-                                                                        class="disable-scroll" data-toggle="tab">Assess
-                                                                        Context</a></li>
-                                                                <li><a href="#leadership-modal-tab3"
-                                                                        class="disable-scroll" data-toggle="tab">Work
-                                                                        With And Through Others</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <!-- Right Column (Tab Content) -->
-                                                        <div class="col-sm-8 tab-content info-text">
-                                                            <div class="panel-body">
-                                                                <div class="tab-content">
-                                                                    <!-- TAB 1 STARTS -->
-                                                                    <div class="tab-pane fade in active"
-                                                                        id="leadership-modal-tab1">
-                                                                        <div class="section-header">
-                                                                            <h2>Know Yourself, Be Yourself, Look After
-                                                                                Yourself</h2>
-                                                                        </div>
-                                                                        <p style="text-align: left;">Leadership
-                                                                            development must start with self-awareness.
-                                                                            The most successful leaders critically
-                                                                            assess their strengths, weaknesses,
-                                                                            motivations and values. Leadership is tough,
-                                                                            so it is also important to build physical
-                                                                            and
-                                                                            emotional resilience, and look after their
-                                                                            own wellbeing so they can respond
-                                                                            effectively to leadership challenges.</p>
-
-                                                                        <p style="text-align: left;"><b>Click on the
-                                                                                inner circles to find out more.</b></p>
-                                                                    </div>
-                                                                    <!-- TAB 2 STARTS -->
-                                                                    <div class="tab-pane fade"
-                                                                        id="leadership-modal-tab2">
-                                                                        <div class="section-header">
-                                                                            <h2>Assess Context</h2>
-                                                                        </div>
-                                                                        <p style="text-align: left;">Social sector
-                                                                            ‘systems’ are rapidly changing. We live in a
-                                                                            dynamic world that is transforming our
-                                                                            workplaces, politics, ethics and
-                                                                            communities. To meet these demands, social
-                                                                            leaders need to understand the complexities
-                                                                            of
-                                                                            changing systems. They must also be aware of
-                                                                            the challenges and opportunities that lie
-                                                                            ahead to steer their teams and
-                                                                            organisations, and make the most of what
-                                                                            these changes offer.</p>
-
-                                                                        <p style="text-align: left;"><b>Click on the
-                                                                                inner circles to find out more.</b></p>
-                                                                    </div>
-                                                                    <!-- TAB 3 STARTS -->
-                                                                    <div class="tab-pane fade"
-                                                                        id="leadership-modal-tab3">
-                                                                        <div class="section-header">
-                                                                            <h2>Work With And Through Others</h2>
-                                                                        </div>
-                                                                        <p style="text-align: left;">No leader exists or
-                                                                            succeeds in isolation. Social skills and
-                                                                            empathy are required to inspire, motivate
-                                                                            and empower others, whilst respecting
-                                                                            diversity and celebrating the power that
-                                                                            difference brings. Working with and through
-                                                                            others involves collaborating, forming
-                                                                            partnerships, as well as inspiring and
-                                                                            growing other leaders, all while making a
-                                                                            positive social impact.</p>
-
-                                                                        <p style="text-align: left;"><b>Click on the
-                                                                                inner circles to find out more.</b></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- Intro Starts -->
-                                        <div class="sp-content-out text-center" id="capabilities-framework">
-                                            <div class="container">
-                                                <!-- Header -->
-                                                <div class="section-header" style="text-align: left;">
-                                                    <h2>Social Leadership Capabilities Framework</h2>
-                                                    <p style="text-align: left;">&nbsp;</p>
-                                                    <p style="text-align: left;">Being a social and ethical leader
-                                                        requires certain capabilities. The Social Leadership
-                                                        Capabilities Framework outlines the attributes, behaviours and
-                                                        skills required for successful social sector leadership. The
-                                                        Capabilities Framework illustrates
-                                                        how and what these skills and behaviours look like in action.
-                                                        Having a framework enables leaders to reflect and assess their
-                                                        current skills. It empowers them to identify leadership gaps and
-                                                        plan their personal and professional development.</p>
-                                                    <p style="text-align: left;">&nbsp;</p>
-                                                </div>
-                                            </div>
-
-
-                                            <!-- Capabilities Framework (Animated Image/Tabs) Starts -->
-                                            <div class="sp-content-out">
-                                                <div class="lg-container">
-                                                    <div class="capabilities-framework">
-                                                        <div class="row">
-                                                            <!-- Left Column (Tab Buttons) -->
-                                                            <div class="col-sm-4 tab-btns info-img">
-                                                                <ul class="nav nav-tabs">
-                                                                    <li class="active"><a
-                                                                            href="#capabilities-framework-tab1"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Empowering Enabler</a>
-                                                                    </li>
-                                                                    <li><a href="#capabilities-framework-tab2"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Focused Strategist</a>
-                                                                    </li>
-                                                                    <li><a href="#capabilities-framework-tab3"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Passionate Advocate</a>
-                                                                    </li>
-                                                                    <li><a href="#capabilities-framework-tab4"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Generous Collaborator</a>
-                                                                    </li>
-                                                                    <li><a href="#capabilities-framework-tab5"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Courageous Changemaker</a>
-                                                                    </li>
-                                                                    <li><a href="#capabilities-framework-tab6"
-                                                                            class="disable-scroll"
-                                                                            data-toggle="tab">Inspirational
-                                                                            Communicator</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <!-- Right Column (Tab Content) -->
-                                                            <div class="col-sm-8 tab-content info-text">
-                                                                <div class="panel-body">
-                                                                    <div class="tab-content">
-                                                                        <div class="tab-pane fade in active"
-                                                                            id="capabilities-framework-tab1">
-                                                                            <div class="section-header">
-                                                                                <h2>Empowering Enabler</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">Empowers
-                                                                                    others to take on new challenges and
-                                                                                    training</li>
-                                                                                <li style="text-align: left;">Role model
-                                                                                    to others, pursues continuous
-                                                                                    self-development</li>
-                                                                                <li style="text-align: left;">Cultivates
-                                                                                    an environment where others can
-                                                                                    excel</li>
-                                                                                <li style="text-align: left;">Exhibits a
-                                                                                    growth mindset, with a readiness to
-                                                                                    learn</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="capabilities-framework-tab2">
-                                                                            <div class="section-header">
-                                                                                <h2>Focused Strategist</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">
-                                                                                    Continuously seeks organisational
-                                                                                    improvement for the people they
-                                                                                    serve</li>
-                                                                                <li style="text-align: left;">Reflective
-                                                                                    and utilises complex information
-                                                                                </li>
-                                                                                <li style="text-align: left;">Delivers
-                                                                                    on outcomes</li>
-                                                                                <li style="text-align: left;">
-                                                                                    Resourceful and strategic, considers
-                                                                                    wider systems and context</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="capabilities-framework-tab3">
-                                                                            <div class="section-header">
-                                                                                <h2>Passionate Advocate</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">
-                                                                                    Cause-passionate, committed to the
-                                                                                    mission and people they serve</li>
-                                                                                <li style="text-align: left;">Strong
-                                                                                    moral compass</li>
-                                                                                <li style="text-align: left;">Wide civic
-                                                                                    responsibility, engages in debate
-                                                                                    and activities</li>
-                                                                                <li style="text-align: left;">Looks
-                                                                                    within and beyond sector to find
-                                                                                    solutions for social change</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="capabilities-framework-tab4">
-                                                                            <div class="section-header">
-                                                                                <h2>Generous Collaborator</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">
-                                                                                    Establishes and grows collaborative
-                                                                                    partnerships and relationships</li>
-                                                                                <li style="text-align: left;">Generously
-                                                                                    shares information, assets and time
-                                                                                </li>
-                                                                                <li style="text-align: left;">Builds
-                                                                                    trust through seeking and giving
-                                                                                    feedback</li>
-                                                                                <li style="text-align: left;">Invites
-                                                                                    inclusive contribution, valuing
-                                                                                    skills and knowledge, respecting
-                                                                                    diversity</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="capabilities-framework-tab5">
-                                                                            <div class="section-header">
-                                                                                <h2>Courageous Changemaker</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">Courageous
-                                                                                    and drives change</li>
-                                                                                <li style="text-align: left;">
-                                                                                    Responsible risk taker</li>
-                                                                                <li style="text-align: left;">Develops
-                                                                                    innovative solutions with and
-                                                                                    through others</li>
-                                                                                <li style="text-align: left;">Curious,
-                                                                                    has foresight and asks why</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                        </div>
-                                                                        <div class="tab-pane fade"
-                                                                            id="capabilities-framework-tab6">
-                                                                            <div class="section-header">
-                                                                                <h2>Inspirational Communicator</h2>
-                                                                            </div>
-                                                                            <ul>
-                                                                                <li style="text-align: left;">Relates to
-                                                                                    others with authenticity</li>
-                                                                                <li style="text-align: left;">
-                                                                                    Influential and confident</li>
-                                                                                <li style="text-align: left;">Clear
-                                                                                    expression of mission and values
-                                                                                </li>
-                                                                                <li style="text-align: left;">Agile,
-                                                                                    able to modify approach and reframe
-                                                                                    based on feedback</li>
-                                                                            </ul>
-                                                                            <div style="text-align: left;"><b>Click on
-                                                                                    another capability to find out
-                                                                                    more.</b></div>
-                                                                            <p style="text-align: left;">&nbsp;</p>
-                                                                            <p style="text-align: left;">&nbsp;</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- Library Starts -->
-                                        <div class="sp-content-out" id="programme-outline">
-                                            <div class="lg-container">
-                                                <!-- Section Header -->
-                                                <div class="section-header">
-                                                    <h2>Programme outline</h2>
-                                                </div>
-                                                <!-- Row 1 Boxes -->
-                                                <div class="row">
-                                                    <!-- Box 1 -->
-                                                    <div class="col-sm-6">
-                                                        <div class="text-box">
-                                                            <h3>
-                                                                <span style="font-size: 20px;"><span
-                                                                        style="text-align: center; background-color: #ffffff;"><u>Week
-                                                                            one</u></span></span>
-                                                            </h3>
-                                                            <h3><span
-                                                                    style="text-align: center; background-color: #ffffff;">Know
-                                                                    Yourself, Be Yourself, Look After Yourself</span>
-                                                            </h3>
-                                                            <p>Week one is about developing a clearer understanding of
-                                                                your leadership style through personal reflection. It is
-                                                                focused on reviewing the personal qualities that social
-                                                                leaders have and how they’re demonstrated, providing a
-                                                                great opportunity
-                                                                to increase self awareness.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Box 2 -->
-                                                    <div class="col-sm-6">
-                                                        <div class="text-box">
-                                                            <h3>
-                                                                <span style="font-size: 20px;"><u>Week two</u></span>
-                                                            </h3>
-                                                            <h3>Assessing Context</h3>
-                                                            <p><span
-                                                                    style="text-align: center; background-color: #ffffff;">Week
-                                                                    two is all about taking a step back and asking
-                                                                    yourself "why?". Why do you do what you do? Why does
-                                                                    your organisation exist? Diving deeper into these
-                                                                    two fundamental questions, we'll investigate the
-                                                                    importance of assessing and understanding context
-                                                                    for leaders.</span>&nbsp;</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Row 2 Boxes -->
-                                                <div class="row">
-                                                    <!-- Box 3 -->
-                                                    <div class="col-sm-6">
-                                                        <div class="text-box">
-                                                            <h3>
-                                                                <span style="font-size: 20px;"><u>Week three</u></span>
-                                                            </h3>
-                                                            <h3>Working With and Through Others</h3>
-                                                            <p><span
-                                                                    style="text-align: center; background-color: #ffffff;">None
-                                                                    of us exist or succeed in isolation. In week three
-                                                                    we’ll look at how you work with and through others.
-                                                                    We'll challenge you to look at how your teams
-                                                                    currently work and help you understand how your
-                                                                    leadership can impact the team.</span>&nbsp;</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Box 4 -->
-                                                    <div class="col-sm-6">
-                                                        <div class="text-box">
-                                                            <h3>
-                                                                <span style="font-size: 20px;"><u>Week four</u></span>
-                                                            </h3>
-                                                            <h3>Take Action</h3>
-                                                            <p>Week four consolidates the learning from the last three
-                                                                weeks and helps you chart the next steps in your
-                                                                leadership development. This final week you will gather
-                                                                your insights and create an actionable Leadership
-                                                                Development Plan to
-                                                                help you continue your leadership journey.&nbsp;&nbsp;
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Icon Columns Starts -->
-                                        <div class="sp-content-out bg-grey" id="how-youll-learn">
-                                            <div class="lg-container">
-                                                <!-- Icons Row 1 -->
-                                                <!-- Header -->
-                                                <div class="section-header">
-                                                    <h2>How you'll learn</h2>
-                                                </div>
-                                                <div class="row">
-                                                    <!-- Column 1 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-briefcase"></i>
-                                                            <h5>The journey</h5>
-                                                            <p>Designed to fit around and complement your day-to-day
-                                                                work, the programme is structured over four weeks, each
-                                                                week containing a practical and reflective task for you
-                                                                to complete before the end of the week, focusing on a
-                                                                core component
-                                                                of social leadership.</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 2 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-check"></i>
-                                                            <h5>Tasks</h5>
-                                                            <p>Tasks won't be assessed, but we strongly recommend
-                                                                completing them to solidify learning.&nbsp;</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 3 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-graduation-cap"></i>
-                                                            <h5>Time commitment</h5>
-                                                            <p>To get the most out of your learning, we recommend
-                                                                allocating around 2-4 hours a week on the course and
-                                                                interacting with your peers on the course as much as
-                                                                possible!</p>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 4 -->
-                                                    <div class="col-md-3 icon-col">
-                                                        <div class="icon-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <h5>Live Classrooms (online)</h5>
-                                                            <p>During the programme there are two live seminars (second
-                                                                and fourth Thursdays, 12:30 - 13:30 GMT) where you and
-                                                                your cohort will discuss the issues you've been working
-                                                                on.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <!-- Featured Content Starts -->
-                                        <div class="sp-featured-out bg-white" id="events-featured">
-                                            <div class="flex-row">
-                                                <!-- Left column (Image) -->
-                                                <div class="col-sm-6 featured-left">
-                                                    <!-- Image -->
-                                                    <div class="featured-img">
-                                                        <img src="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/resource/resmgr/images/programme_page_images/discover_programme/discover_diaries.jpg"
-                                                            alt="/">
-                                                    </div>
-                                                </div>
-                                                <!-- Right column (Text) -->
-                                                <div class="col-sm-6 featured-right">
-                                                    <!-- Text -->
-                                                    <div class="featured-text">
-                                                        <!-- Section Header -->
-                                                        <div class="section-header">
-                                                            <h2>Discover Diaries</h2>
-                                                        </div>
-                                                        <p>
-                                                            <span style="font-size: 16px;"><i><b>"It was enlightening to
-                                                                        reflect on my strengths and weaknesses, and
-                                                                        properly consider the barriers and opportunities
-                                                                        around these."</b></i></span>
-                                                        </p>
-                                                        <p>In partnership with Clore Leadership, we delivered the
-                                                            Discover Programme to a cohort of 20+ cultural leaders.
-                                                            Clore Leadership has invited the participants to share their
-                                                            thoughts, insights, and overall experience with us. </p>
-                                                        <p>Among the participants was Gemma Wright, Head of Education at
-                                                            the Camden Arts Centre, who has been keeping weekly diaries
-                                                            of her learning experience.&nbsp;</p>
-                                                        <a href="/" class="formbutton">Read More</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- CTA Bar 2 Starts -->
-                                        <div class="sp-content-out bg-gradient text-white" id="fellowship-cta2">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <!-- Column 1 -->
-                                                    <div class="col-sm-8 cr-left">
-                                                        <div class="section-header">
-                                                            <h2>Increase your leadership potential</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Column 2 -->
-                                                    <div class="col-sm-4 cr-right"><a
-                                                            href="https://cloresocialleadership.org.uk/events/event_list.asp?show=&amp;group=&amp;start=3%2F12%2F2021&amp;end=&amp;view=&amp;cid=21571"
-                                                            class="line-btn line-yellow" target="_self">View dates and
-                                                            secure your place</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p></p>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td colspan="3">
+                                    <div>
                                         <div style="display:inline-block;vertical-align:top; padding:20px;">
 
                                             &nbsp;
 
                                         </div>
                                         <div style="display:inline-block;vertical-align:top; padding:20px;">
-                                            <p>Want to understand why managing well matters? This course covers the
-                                                foundations of people management.</p>
+                                            <p>Register now for this free, open access Webinar. IMAS membership is not required, but since it's free until June 1, why not sign up anyway? Only members have access to all on-demand Webinar recordings.</p>
                                             <table border="0" cellspacing="0" cellpadding="0" class="ViewTable1">
                                                 <tbody>
                                                     <tr>
                                                         <td>
-                                                            &nbsp;<a href="#" title="Export to Your Calendar"
-                                                                id="AddToCalendarHoverLink_1604820_"
-                                                                onclick="AddToCalendarHoverLink_OnMouseOver(1604820, ''); return false;"><i
-                                                                    class="fas fa-calendar" style="
-                                font-size: 28px;
-                            "></i></a>
                                                         </td>
                                                         <td>
-                                                            <b>19/09/2022 to 14/10/2022</b>
                                                         </td>
                                                     </tr>
 
@@ -1274,18 +397,18 @@
                                                         <td class="caption">
                                                             <b>When:</b>
                                                         </td>
-                                                        <td style="text-align:left;vertical-align:top">
-                                                            19 September - 14 October 2022<br>2-4 hours per week<br>
+                                                        <td style="text-align:left;vertical-align:top;">
+                                                            21 November 2022<br />10:00 US EST / 16:00 CET <br />
                                                         </td>
                                                     </tr>
 
 
                                                     <tr>
                                                         <td class="caption">
-                                                            <b>Where:</b>
+                                                            <b>Duration:</b>
                                                         </td>
                                                         <td>
-                                                            Online<br>United Kingdom<br>
+                                                            1 hour<br />Includes approx 15 minutes live audience Q&A<br />
                                                         </td>
                                                     </tr>
 
@@ -1293,12 +416,14 @@
 
                                                     <tr>
                                                         <td class="caption">
-                                                            <b>Contact:</b>
+                                                            <b>Questions?</b>
                                                         </td>
                                                         <td>
-                                                            Liam Russell<br><a
-                                                                href="mailto:info@cloresocialleadership.org.uk">info@cloresocialleadership.org.uk</a><br>
-                                                            020 7082 5370 ext 275<br>
+                                                            Joel Murray<br />
+                                                            <script language="JavaScript">
+                                                                <!--
+                                                                //-->
+                                                            </script><a href="mailto:info@marketaccess.org">info@marketaccess.org</a><br /> <br />
                                                         </td>
                                                     </tr>
 
@@ -1307,269 +432,311 @@
                                         </div>
                                         <div style="display:inline-block;vertical-align:top; padding:20px;">
                                             <div>
-                                                <br>
+                                                <br />
 
 
 
                                                 <div style="width:100%;text-align:center;">
-                                                    <input type="button" name="ctl00$PageContent$btnRegister"
-                                                        value="Register"
-                                                        onclick="RegistrationValidationBox(); return false;__doPostBack('ctl00$PageContent$btnRegister','')"
-                                                        id="ctl00_PageContent_btnRegister" class="formbutton">
+                                                    <a href="https://zoom.us/webinar/register/2916677666370/WN_Tv1sDiueQtmmKHIb8FOkFA" target="_self" class="formbutton">Register</a>
                                                 </div>
-                                                <br>
-                                                <i style="font-size:small">Online registration is available until:
-                                                    20/09/2022</i>
-                                                <br>
-                                                <ul class="ml">
-                                                    <li><b><a href="/events/Sessions.aspx?id=1604820">View Sessions
-                                                                »</a></b></li>
-                                                </ul>
-
-
-
+                                                <br />
+                                                <i style="font-size:small;">Online registration is available until: 20/09/2022</i>
+                                                <br />
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="bluebg">
-                                        <a href="/events/event_list.asp">« Go to Upcoming Event List</a>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    </div>
 
-                    </form>
+                                    <!-- Details Info Starts -->
+                                    <div class="sp-content-out" id="fellowship-details">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Left Column (Header & Description) -->
+                                                <div class="col-md-6 details-desc">
+                                                    <div class="section-header">
+                                                        <h2>Programme information</h2>
+                                                    </div>
+                                                    <p>Discover the <b>key leadership skills</b> required for social leadership and map your future leadership journey with our four week online introductory course.<br /><br />The<b> Discover
+                                                                Programme</b> is a great first step or refresh for anyone working for social change who is looking to develop themselves as leaders in order to transform their organisations, communities
+                                                        and the world around them.</p>
+                                                </div>
+                                                <!-- Right Column (Details) -->
+                                                <div class="col-md-5 col-md-offset-1 details-info">
+                                                    <div class="row">
+                                                        <!-- Detail Column 1 -->
+                                                        <div class="col-sm-6 details-col">
+                                                            <h6>Course Detail</h6>
+                                                            <ul>
+                                                                <li><i class="far fa-clock"></i>2-4 hours/week</li>
+                                                                <li><i class="fas fa-signal"></i>All levels of experience
+                                                                </li>
+                                                                <li><i class="fas fa-coins"></i> £50</li>
+                                                                <li><i class="fas fa-graduation-cap"></i>Certificate of completion</li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- Detail Column 2 -->
+                                                        <div class="col-sm-6 details-col">
+                                                            <h6>Course Features</h6>
+                                                            <ul>
+                                                                <li><i class="fas fa-check"></i>4-week course</li>
+                                                                <li><i class="fas fa-check"></i>Exclusively online
+                                                                </li>
+                                                                <li><i class="fas fa-check"></i>Self-paced learning
+                                                                </li>
+                                                                <li><i class="fas fa-check"></i>Peer networks</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <div class="yui-skin-sam">
-                        <div class="yui-panel-container yui-overlay-hidden" id="ContextualHelp_c"
-                            style="visibility: hidden; z-index: 20000;">
-                            <div id="ContextualHelp" style="visibility: inherit; width: 400px;"
-                                class="yui-module yui-overlay yui-panel"><a class="container-close" href="#">Close</a>
-                                <div id="ContextualHelpHead" class="hd" style="cursor: move;"></div>
-                                <div id="ContextualHelpBody" class="bd"></div>
-                            </div>
-                        </div>
-                        <div id="SpNavBarSub" style="visibility:hidden">
-                            <div id="SpNavBarSubBody" class="bd"></div>
+                                    <!-- Buttons -->
+                                    <div class="section-btns text-center"><a href="https://zoom.us/webinar/register/2916677666370/WN_Tv1sDiueQtmmKHIb8FOkFA" target="_self" class="formbutton">View dates and secure your
+                                                place</a>&nbsp;&nbsp;</div>
+                                    <br />
+                                    <br />
+
+                                    <!-- Facilitator Starts -->
+                                    <div class="sp-content-out" id="facilitator">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Left Column -->
+                                                <div class="col-md-8 info-left">
+                                                    <div class="section-header">
+                                                        <h2>Presenters</h2>
+                                                    </div>
+                                                    <h4 style="box-sizing: border-box; background-color: #ffffff;">
+                                                        <span style="font-size: 24px;">Mikayla Sinead</span>
+                                                    </h4>
+                                                    <p style="box-sizing: border-box; background-color: #ffffff;">
+                                                        Mikayla joins with a passion for leading with an inclusive intersectional mindset whilst centring joy. Mikayla’s career has focussed on developing more inclusive workplaces &amp; future leaders. Mikayla now combines her love for gaming with professional
+                                                        experience through her company Bridge Network Group which focuses on boosting representation in organisations. Additionally, as a passionate gamer and content creator on the streaming platform Twitch,
+                                                        Mikayla is on a mission to build a community of Black Women and future changemakers in the video game industry.</p>
+                                                    <p>Mikayla has a wealth of experience in supporting young and diverse talent to reach positions of influence and leadership. Mikayla is in the 2019 cohort of Birmingham Live’s 30 under 30 in recognition
+                                                        of her work with young people in the city. She also has experience with MAIA Group, TAG Network West Midlands, Amplify DEI, The British Council, UpRising Leadership West Midlands Combined Authority,
+                                                        Ultra Education, University of Birmingham, Enrol Yourself: The Learning Marathon, West Midlands Women's Voice, and iDNetwork. Mikayla is a confident public speaker and in 2018 spoke at the Women
+                                                        of the World Festival in Brazil.</p>
+                                                </div>
+                                                <!-- Right Column --><br /><br /><br /><br /><br /><br />
+                                                <div class="col-md-3 col-md-offset-1 info-right">
+                                                    <img src="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/resource/resmgr/images/programme_page_images/dei_transformation/makayla_new.jpg" alt="Mikayla Sinead" class="img-responsive center-block" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Facilitator Starts -->
+                                    <div class="sp-content-out" id="speaker">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Left Column -->
+                                                <div class="col-md-8 info-left">
+                                                    <div class="section-header">
+                                                        <h2>Speaker2</h2>
+                                                    </div>
+                                                    <h4 style="box-sizing: border-box; background-color: #ffffff;">
+                                                        <span style="font-size: 24px;">Mikayla Sinead</span>
+                                                    </h4>
+                                                    <p style="box-sizing: border-box; background-color: #ffffff;">
+                                                        Mikayla joins with a passion for leading with an inclusive intersectional mindset whilst centring joy. Mikayla’s career has focussed on developing more inclusive workplaces &amp; future leaders. Mikayla now combines her love for gaming with professional
+                                                        experience through her company Bridge Network Group which focuses on boosting representation in organisations. Additionally, as a passionate gamer and content creator on the streaming platform Twitch,
+                                                        Mikayla is on a mission to build a community of Black Women and future changemakers in the video game industry.</p>
+                                                    <p>Mikayla has a wealth of experience in supporting young and diverse talent to reach positions of influence and leadership. Mikayla is in the 2019 cohort of Birmingham Live’s 30 under 30 in recognition
+                                                        of her work with young people in the city. She also has experience with MAIA Group, TAG Network West Midlands, Amplify DEI, The British Council, UpRising Leadership West Midlands Combined Authority,
+                                                        Ultra Education, University of Birmingham, Enrol Yourself: The Learning Marathon, West Midlands Women's Voice, and iDNetwork. Mikayla is a confident public speaker and in 2018 spoke at the Women
+                                                        of the World Festival in Brazil.</p>
+                                                </div>
+                                                <!-- Right Column --><br /><br /><br /><br /><br /><br />
+                                                <div class="col-md-3 col-md-offset-1 info-right">
+                                                    <img src="https://cdn.ymaws.com/cloresocialleadership.site-ym.com/resource/resmgr/images/programme_page_images/dei_transformation/makayla_new.jpg" alt="Mikayla Sinead" class="img-responsive center-block" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-btns text-center">
+                                        <a href="https://zoom.us/webinar/register/2916677666370/WN_Tv1sDiueQtmmKHIb8FOkFA" target="_self" class="formbutton">Register Now for Free</a></div>
+                                    <br />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </form>
+
+                <div class="yui-skin-sam">
+                    <div class="yui-panel-container yui-overlay-hidden" id="ContextualHelp_c" style="visibility: hidden; z-index: 20000;">
+                        <div id="ContextualHelp" style="visibility: inherit; width: 400px;" class="yui-module yui-overlay yui-panel"><a class="container-close" href="#">Close</a>
+                            <div id="ContextualHelpHead" class="hd" style="cursor: move;">&nbsp;</div>
+                            <div id="ContextualHelpBody" class="bd">&nbsp;</div>
                         </div>
                     </div>
-
-                    <div id="PageBase_RaiseAlert" class="yui-skin-sam"></div>
-                    <!--@@DG_PRINT_PAGE_END@@
-							IMPORTANT! DO NOT MOVE OR MODIFY -->
-                </div><!-- Close sp-content div -->
-            </div><!-- Close left div -->
-
-            <div id="right" class="col-sm-4 ptop-15" style="display: none;">
-                <div class="content">
-                    <!--YMPSTITLE=TgBBAA==/YMPSTITLE-->
+                    <div id="SpNavBarSub" style="visibility:hidden;">
+                        <div id="SpNavBarSubBody" class="bd">&nbsp;</div>
+                    </div>
                 </div>
 
-                <div class="zone mbottom-15" id="login">
-                    <div class="irailhead">Sign In</div>
-                    <div class="irailcontent">
-                        <form id="LoginForm" action="https://cloresocialleadership.org.uk/Login.aspx?returl="
-                            method="post"><a
-                                href="https://ws.yourmembership.com/Ams/SocialOAuth/facebook?Continue=%2fAms%2fFinalizeLogin%2ffacebook%3fReturnUrl%3dhttps%253a%252f%252fcloresocialleadership.org.uk%252fsocial%252fconnect.aspx%26ClientID%3d0%26UseReturnUrl%3dTrue"
-                                type="button" class="btn-connect facebook">
+                <div id="PageBase_RaiseAlert" class="yui-skin-sam">&nbsp;</div>
+                <!--@@DG_PRINT_PAGE_END@@
+							IMPORTANT! DO NOT MOVE OR MODIFY -->
+            </div>
+            <!-- Close sp-content div -->
+        </div>
+        <!-- Close left div -->
+
+        <div id="right" class="col-sm-4 ptop-15" style="display: none;">
+            <div class="content">
+                <!--YMPSTITLE=TgBBAA==/YMPSTITLE-->
+            </div>
+
+            <div class="zone mbottom-15" id="login">
+                <div class="irailhead">Sign In</div>
+                <div class="irailcontent">
+                    <form id="LoginForm" action="https://cloresocialleadership.org.uk/Login.aspx?returl=" method="post"><a href="https://ws.yourmembership.com/Ams/SocialOAuth/facebook?Continue=%2fAms%2fFinalizeLogin%2ffacebook%3fReturnUrl%3dhttps%253a%252f%252fcloresocialleadership.org.uk%252fsocial%252fconnect.aspx%26ClientID%3d0%26UseReturnUrl%3dTrue"
+                            type="button" class="btn-connect facebook">
                                 <span class="facebook-icon">
-                                    <img src="https://cloresocialleadership.org.uk/global_graphics/facebook-icon.png">
+                                    <img alt="" src="https://cloresocialleadership.org.uk/global_graphics/facebook-icon.png" />
                                 </span>
                                 <span class="facebook-text">Login with Facebook</span>
-                            </a><a
-                                href="https://ws.yourmembership.com/Ams/SocialOAuth/linkedin?Continue=%2fAms%2fFinalizeLogin%2flinkedin%3fReturnUrl%3dhttps%253a%252f%252fcloresocialleadership.org.uk%252fsocial%252fconnect.aspx%26ClientID%3d0%26UseReturnUrl%3dTrue"
-                                type="button" class="btn-connect linkedin">
+                            </a><a href="https://ws.yourmembership.com/Ams/SocialOAuth/linkedin?Continue=%2fAms%2fFinalizeLogin%2flinkedin%3fReturnUrl%3dhttps%253a%252f%252fcloresocialleadership.org.uk%252fsocial%252fconnect.aspx%26ClientID%3d0%26UseReturnUrl%3dTrue"
+                            type="button" class="btn-connect linkedin">
                                 <span class="linkedin-icon">
-                                    <img src="https://cloresocialleadership.org.uk/global_graphics/linkedin-icon.png">
+                                    <img alt="" src="https://cloresocialleadership.org.uk/global_graphics/linkedin-icon.png" />
                                 </span>
                                 <span class="linkedin-text">Login with LinkedIn</span>
                             </a>
-                            <div class="or-option">
-                                <span class="or-text">OR</span>
-                            </div><input type="hidden" name="ERR_u" value="u|Username|20|1||0"><input type="hidden"
-                                name="ERR_p" value="p|Password|20|1||0">
-                            <p></p>
-                            <div id="LoginUserName"><input class="small loginuser" type="text" name="u" size="20"
-                                    maxlength="255" value="" placeholder="Username"></div>
-                            <div id="LoginPassword"> <br>
-                                <input class="small loginpass" type="password" name="p" size="20" maxlength="64"
-                                    autocomplete="off" placeholder="Password">
-                            </div>
-                            <p></p>
-                            <p id="RememberMe"><input id="FrontendControls_RememberMe" type="checkbox" name="rememberme"
-                                    value="true" checked=""><label for="FrontendControls_RememberMe">Remember Me</label>
-                            </p>
-                            <p id="LoginSubmit"><input type="submit" name="btn_submitLogin" value="Sign In"
-                                    class="formbutton">
-                                <img class="securesubmit"
-                                    src="https://cloresocialleadership.org.uk/global_graphics/icons/securesubmit.png"
-                                    title="Secured with SSL encryption.">
-                            </p>
-                        </form>
-                        <div id="LoginForgot"><a href="/general/email_pass.asp">Forgot your password?</a></div>
-                        <div id="LoginRegister"><a href="/general/register_start.asp">Haven't registered yet?</a></div>
-                    </div>
-                </div>
-
-                <div class="zone mbottom-15" id="news">
-                    <div class="irailhead">
-                        Latest News
-                        <a class="pull-right" href="/news/">more</a>
-                    </div>
-                    <div class="irailcontent">There are currently no news items posted.</div>
-                </div>
-
-                <div class="zone mbottom-15" id="calendar">
-                    <div class="irailhead">
-                        Calendar
-                        <a class="pull-right" href="/events/event_list.asp">more</a>
-                    </div>
-                    <div class="irailcontent">
-                        <div id="tt-container" class="yui-skin-sam">
-                            <div id="YMTTipEventPnl1604834" class="yui-module yui-overlay yui-tt yui-overlay-hidden"
-                                style="z-index: 2; width: 245px; visibility: hidden;">
-                                <div class="bd">£50 - a four-week online introduction to social leadership. Helping you
-                                    gain insight into who you are as a leader and how to develop.</div>
-                            </div>
-                            <div id="YMTTipEventPnl1604820" class="yui-module yui-overlay yui-tt yui-overlay-hidden"
-                                style="z-index: 2; width: 245px; visibility: hidden;">
-                                <div class="bd">Want to understand why managing well matters? This course covers the
-                                    foundations of people management.</div>
-                            </div>
+                        <div class="or-option">
+                            <span class="or-text">OR</span>
+                        </div><input type="hidden" name="ERR_u" value="u|Username|20|1||0" /><input type="hidden" name="ERR_p" value="p|Password|20|1||0" />
+                        <p>&nbsp;</p>
+                        <div id="LoginUserName"><input class="small loginuser" type="text" name="u" size="20" maxlength="255" placeholder="Username" /></div>
+                        <div id="LoginPassword"> <br />
+                            <input class="small loginpass" type="password" name="p" size="20" maxlength="64" autocomplete="off" placeholder="Password" />
                         </div>
-                        <div class="UpcomingEvents UpcomingEvents_1">
-                            <p id="EventPnl1604834">19/09/2022 » 14/10/2022<br clear="all"><a
-                                    href="/events/EventDetails.aspx?id=1604834">Discover Programme September 2022</a>
-                            </p>
+                        <p>&nbsp;</p>
+                        <p id="RememberMe"><input id="FrontendControls_RememberMe" type="checkbox" name="rememberme" value="true" /><label for="FrontendControls_RememberMe">Remember Me</label>
+                        </p>
+                        <p id="LoginSubmit"><input type="submit" name="btn_submitLogin" value="Sign In" class="formbutton" />
+                            <img alt="" class="securesubmit" src="https://cloresocialleadership.org.uk/global_graphics/icons/securesubmit.png" title="Secured with SSL encryption." />
+                        </p>
+                    </form>
+                    <div id="LoginForgot"><a href="/general/email_pass.asp">Forgot your password?</a></div>
+                    <div id="LoginRegister"><a href="/general/register_start.asp">Haven't registered yet?</a></div>
+                </div>
+            </div>
+
+            <div class="zone mbottom-15" id="news">
+                <div class="irailhead">
+                    Latest News
+                    <a class="pull-right" href="/news/">more</a>
+                </div>
+                <div class="irailcontent">There are currently no news items posted.</div>
+            </div>
+
+            <div class="zone mbottom-15" id="calendar">
+                <div class="irailhead">
+                    Calendar
+                    <a class="pull-right" href="/events/event_list.asp">more</a>
+                </div>
+                <div class="irailcontent">
+                    <div id="tt-container" class="yui-skin-sam">
+                        <div id="YMTTipEventPnl1604834" class="yui-module yui-overlay yui-tt yui-overlay-hidden" style="z-index: 2; width: 245px; visibility: hidden;">
+                            <div class="bd">£50 - a four-week online introduction to social leadership. Helping you gain insight into who you are as a leader and how to develop.</div>
                         </div>
-                        <div class="UpcomingEvents UpcomingEvents_2">
-                            <p id="EventPnl1604820">19/09/2022 » 14/10/2022<br clear="all"><a
-                                    href="/events/EventDetails.aspx?id=1604820">Stepping into Management September
+                        <div id="YMTTipEventPnl1604820" class="yui-module yui-overlay yui-tt yui-overlay-hidden" style="z-index: 2; width: 245px; visibility: hidden;">
+                            <div class="bd">Want to understand why managing well matters? This course covers the foundations of people management.</div>
+                        </div>
+                    </div>
+                    <div class="UpcomingEvents UpcomingEvents_1">
+                        <p id="EventPnl1604834">19/09/2022 » 14/10/2022<br clear="all" /><a href="/events/EventDetails.aspx?id=1604834">Discover Programme September 2022</a>
+                        </p>
+                    </div>
+                    <div class="UpcomingEvents UpcomingEvents_2">
+                        <p id="EventPnl1604820">19/09/2022 » 14/10/2022<br clear="all" /><a href="/events/EventDetails.aspx?id=1604820">Stepping into Management September
                                     2022</a></p>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="zone mbottom-15" id="featured">
-                    <div class="irailhead">Featured Members</div>
-                    <div class="irailcontent">
-                        <p></p>
-                    </div>
+            <div class="zone mbottom-15" id="featured">
+                <div class="irailhead">Featured Members</div>
+                <div class="irailcontent">
+                    <p>&nbsp;</p>
                 </div>
+            </div>
 
-                <div class="zone" id="newestmembers">
-                    <div class="irailhead">Newest Members</div>
-                    <div class="irailcontent">
-                        <div style="overflow:hidden;width:180px;height:180px;">
-                            <div title="Hover to Stop" id="VScroll_Container0">
-                                <div onmouseover="sspeed=0;" onmouseout="sspeed=resumesspeed">
-                                    <div id="vscroll0" style="top: 149px;">
-                                        <ul class="ContentPanelVscroll">
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70503204">R. Jones, Trinity Community
-                                                    Arts</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70498416">S. Sloan</a><span
-                                                    class="NewestMemberItemText">Clore Social Staff: Chit
-                                                    Chat</span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70495833">M. Ingham, Drawing
-                                                    Room</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70495815">B. Dadd</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70483291">R. Gamble, National
-                                                    Trust</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70482482">E. Timi-Biu, CREATE YOUR
-                                                    TABLE</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70480920">I. Horton, Grow
-                                                    Cardiff</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70479255">I. Pursch, UK Youth</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70476171">T. Witherick, Libraries
-                                                    Unlimited</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70472347">C. Sheppard, The Health
-                                                    Foundation</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=66339140">S. Williams</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70417826">A. Dennis, SaffronbHousing
-                                                    Trust</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70417665">A. Bailey, Form the Future
-                                                    CIC</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=69984903">J. McIntosh, Drawing
-                                                    Room</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=69985187">B. Ndukwe</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=69985193">D. Sackey-Mensah</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70415533">S. Iglesias, CLHWest /
-                                                    Bristol CLT</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70410794">H. Mee, The Clare
-                                                    Foundation</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70405836">R. Baker, Practical
-                                                    Action</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70405724">S. Hayes, CleanupUK</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70404516">T. Reddy, Tender Education
-                                                    &amp; Arts</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70403863">P. Cochrane, Scottish Book
-                                                    Trust</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70401385">F. Garcia, Kinzu REsearch
-                                                    and Engineering</a><span class="NewestMemberItemText"></span><br>
-                                            </li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70398356">T. Lovelace, Trevi Women
-                                                    Ltd</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70395166">F. de Munnich, The National
-                                                    Lottery Community Fund</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70394269">C. Ross, Big Change
-                                                    Charitable Trust</a><span class="NewestMemberItemText"></span><br>
-                                            </li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70393556">H. Cheeseman, Action on
-                                                    Smoking and Health</a><span class="NewestMemberItemText"></span><br>
-                                            </li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70386022">N. Rubbra, Footwork Trust
-                                                    CIO</a><span class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70377081">R. Wilkinson, n/a</a><span
-                                                    class="NewestMemberItemText"></span><br></li>
-                                            <li><a style="display:block;" class="NewestMemberItemLink"
-                                                    href="/members/default.asp?id=70367613">J. Corbett, University of
-                                                    Bristol</a><span class="NewestMemberItemText"></span><br></li>
-                                        </ul>
-                                    </div>
+            <div class="zone" id="newestmembers">
+                <div class="irailhead">Newest Members</div>
+                <div class="irailcontent">
+                    <div style="overflow:hidden;width:180px;height:180px;">
+                        <div title="Hover to Stop" id="VScroll_Container0">
+                            <div onmouseover="sspeed=0;" onmouseout="sspeed=resumesspeed">
+                                <div id="vscroll0" style="top: 149px;">
+                                    <ul class="ContentPanelVscroll">
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70503204">R. Jones, Trinity Community
+                                                    Arts</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70498416">S. Sloan</a><span class="NewestMemberItemText">Clore Social Staff: Chit
+                                                    Chat</span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70495833">M. Ingham, Drawing
+                                                    Room</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70495815">B. Dadd</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70483291">R. Gamble, National
+                                                    Trust</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70482482">E. Timi-Biu, CREATE YOUR
+                                                    TABLE</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70480920">I. Horton, Grow
+                                                    Cardiff</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70479255">I. Pursch, UK Youth</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70476171">T. Witherick, Libraries
+                                                    Unlimited</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70472347">C. Sheppard, The Health
+                                                    Foundation</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=66339140">S. Williams</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70417826">A. Dennis, SaffronbHousing
+                                                    Trust</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70417665">A. Bailey, Form the Future
+                                                    CIC</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=69984903">J. McIntosh, Drawing
+                                                    Room</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=69985187">B. Ndukwe</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=69985193">D. Sackey-Mensah</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70415533">S. Iglesias, CLHWest /
+                                                    Bristol CLT</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70410794">H. Mee, The Clare
+                                                    Foundation</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70405836">R. Baker, Practical
+                                                    Action</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70405724">S. Hayes, CleanupUK</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70404516">T. Reddy, Tender Education
+                                                    &amp; Arts</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70403863">P. Cochrane, Scottish Book
+                                                    Trust</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70401385">F. Garcia, Kinzu REsearch
+                                                    and Engineering</a><span class="NewestMemberItemText"></span><br />
+                                        </li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70398356">T. Lovelace, Trevi Women
+                                                    Ltd</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70395166">F. de Munnich, The National
+                                                    Lottery Community Fund</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70394269">C. Ross, Big Change
+                                                    Charitable Trust</a><span class="NewestMemberItemText"></span><br />
+                                        </li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70393556">H. Cheeseman, Action on
+                                                    Smoking and Health</a><span class="NewestMemberItemText"></span><br />
+                                        </li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70386022">N. Rubbra, Footwork Trust
+                                                    CIO</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70377081">R. Wilkinson, n/a</a><span class="NewestMemberItemText"></span><br /></li>
+                                        <li><a style="display:block;" class="NewestMemberItemLink" href="/members/default.asp?id=70367613">J. Corbett, University of
+                                                    Bristol</a><span class="NewestMemberItemText"></span><br /></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <style type="text/css">
-                            #VScroll_Container0 {
+                    </div>
+                    <style type="text/css">
+                        #VScroll_Container0 {
                                 position: relative;
                                 overflow: hidden;
                                 width: 180px;
@@ -1594,26 +761,27 @@
                                 padding-left: 0px;
                                 margin-left: 0px;
                             }
-                        </style>
+                    </style>
 
-                    </div>
-                </div>
-
-                <div class="zone mbottom-15" id="surveys">
-                    <div class="irailhead">Online Surveys</div>
-                    <div class="irailcontent">
-                        <table border="0" cellpadding="0" cellspacing="0"></table>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <!--YMPSTITLE=TgBBAA==/YMPSTITLE-->
                 </div>
             </div>
 
-        </div> <!-- Close row div -->
-        <div class="clear"></div>
+            <div class="zone mbottom-15" id="surveys">
+                <div class="irailhead">Online Surveys</div>
+                <div class="irailcontent">
+                    <table border="0" cellpadding="0" cellspacing="0"></table>
+                </div>
+            </div>
+
+            <div class="content">
+                <!--YMPSTITLE=TgBBAA==/YMPSTITLE-->
+            </div>
+        </div>
+
     </div>
+    <!-- Close row div -->
+    <div class="clear">&nbsp;</div>
+</div>
 </body>
 
 </html>
